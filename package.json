@@ -1,0 +1,10 @@
+{
+  "name": "cxcc-fullstack",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx concurrently \"PORT=5001 python3 app.py\" \"cd frontend && npm run dev\"",
+    "backend": "PORT=5001 python3 app.py",
+    "frontend": "cd frontend && npm run dev"
+  }
+}
