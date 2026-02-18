@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Sublet Finder</title>
+</head>
+<body>
+    <h1>Find Your Sublet</h1>
+
+    <form method="POST">
+        Budget ($):
+        <input type="number" name="budget" required><br><br>
+
+        Location:
+        <input type="text" name="location" required><br><br>
+
+        Amenities:<br>
+        <input type="checkbox" name="amenities" value="wifi"> WiFi<br>
+        <input type="checkbox" name="amenities" value="laundry"> Laundry<br>
+        <input type="checkbox" name="amenities" value="furnished"> Furnished<br>
+        <input type="checkbox" name="amenities" value="gym"> Gym<br><br>
+
+        <button type="submit">Find Matches</button>
+    </form>
+
+    <hr>
+
+    {% for l in results %}
+        <div>
+            <h3>{{ l.title }}</h3>
+            <p>Price: ${{ l.price }}</p>
+            <p>Location: {{ l.location }}</p>
+            <p>Amenities: {{ ", ".join(l.amenities) }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>
